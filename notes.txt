@@ -1,0 +1,77 @@
+BACKEND:
+
+"md server" -> to create a seperate folder to server.
+
+"npm init" ->  It will prompt you to enter values for various fields in the package.
+                json file, such as the project name, version, description, entry point, 
+                test command, git repository, keywords, author, and license.
+
+"npm init -y" -> initializes a new Node.js project with default settings, It creates a package.
+                json file with default values. you can simply press enter button.
+
+"npm i express cors" -> express: A minimal and flexible Node.js web application framework that provides a robust
+                        set of features for web and mobile applications.
+
+                        cors: A package for providing a Connect/Express middleware that can be used to enable 
+                        Cross-Origin Resource Sharing (CORS) with various options. it mainly use for managing the 
+                        Cross-Origin(manage the port of frontend and backend).
+
+"npm i nodemon -D" -> for developer dependencies(for auto save). The -D flag indicates that the package should
+                        be installed as a development dependency.
+
+FRONTEND:
+
+"npx create-vite@latest frontend" -> for create the vite app for frontend.
+
+"npm i axios" -> For API connection.
+
+
+WORKING OF THE PROJECT: 
+
+step 1: we have to ready and run the server first,
+
+        " const express = require('express');
+          const app = express();
+          const port = 8000;
+
+          app.listen(port, () => {
+            console.log(`Server is running on port: ${port}`);
+          })
+        ". so we can use the above lines.
+
+step 2: Then we have to fetch the data to server, for example i have json data in the 'sample.json' file.
+
+        " const userData = require('./sample.json');
+          
+          app.get('/users', (req, res) => {
+          return res.json(userData);
+          })
+        ". this is the best approach to fetch the data rather than directly from the 'sample.json' file.
+
+step 3: Now, we have to ready and run for the frontend. so, create the UI for your application.
+
+step 4: After creating of the frontend. we have to connect the frontend and backend,
+
+        " import axiox from "axios"
+          
+          const getAllUser = async () => {
+            await axiox.get('http://localhost:8000/users').then(res => {
+            // console.log(res.data)
+            setUser(res.data)
+            setFilterUsers(res.data)
+          })
+      
+          };
+
+          useEffect(() => {
+          getAllUser()
+          }, [])
+        ". 
+
+        'axiox' -> use for API connection.
+        'async' -> use to return a promise(which is a value either present now or future or not present, whatever may be).
+        'await' -> use for wait for complete the fetching of the user data from 'http://localhost:8000/users'.
+        'axiox.get' -> use to get(fetch) the data form that url because we load the data to that url in the step 2.
+        'useEffect' -> use for automatically rendaring.
+
+    
