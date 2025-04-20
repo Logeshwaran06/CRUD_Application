@@ -5,7 +5,10 @@ const cors = require('cors');
 const port = 8000;
 const fs = require('fs');
 
-app.use(cors());
+app.use(cors({
+  origin: "https://Logeshwaran06.github.io/CRUD_Application",
+  Credential: true
+}));
 app.use(express.json());
 
 app.get('/users', (req, res) => {
