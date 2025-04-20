@@ -20,7 +20,7 @@ function App() {
 
   const getAllUser = async () => {
     try {
-      const response = await axios.get('https://crud-application-zbsu.onrender.com');
+      const response = await axios.get('https://crud-application-zbsu.onrender.com/users');
       setUser(response.data);
       setFilterUsers(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ function App() {
     e.preventDefault();
   
     try {
-      const response = await axios.post("https://crud-application-zbsu.onrender.com", addNewUser, {
+      const response = await axios.post("https://crud-application-zbsu.onrender.com/users", addNewUser, {
         headers: { "Content-Type": "application/json" }
       });
   
@@ -59,7 +59,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`https://crud-application-zbsu.onrender.com/${currentUserId}`, addNewUser, {
+      const response = await axios.put(`https://crud-application-zbsu.onrender.com/users/${currentUserId}`, addNewUser, {
         headers: {
           "Content-Type": "application/json"
         }
@@ -109,7 +109,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`https://crud-application-zbsu.onrender.com/${id}`);
+      const response = await axios.delete(`https://crud-application-zbsu.onrender.com/users/${id}`);
       const updatedUsers = response.data;
       setUser(updatedUsers);
       setFilterUsers(updatedUsers);
