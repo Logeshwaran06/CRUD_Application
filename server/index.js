@@ -7,7 +7,7 @@ const fs = require('fs');
 
 app.use(cors({
   origin: "https://Logeshwaran06.github.io/CRUD_Application",
-  Credential: true
+  Credentials: true
 }));
 app.use(express.json());
 
