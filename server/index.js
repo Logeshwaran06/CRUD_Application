@@ -6,8 +6,8 @@ const port = 8000;
 const fs = require('fs');
 
 app.use(cors({
-  origin: "https://Logeshwaran06.github.io/CRUD_Application",
-  Credentials: true
+  origin: "https://Logeshwaran06.github.io",
+  credentials: true
 }));
 app.use(express.json());
 
