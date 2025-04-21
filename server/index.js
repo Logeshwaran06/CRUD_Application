@@ -7,6 +7,7 @@ const fs = require('fs');
 
 app.use(cors({
   origin: "https://Logeshwaran06.github.io",
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 app.use(express.json());
