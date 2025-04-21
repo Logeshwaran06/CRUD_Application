@@ -6,7 +6,7 @@ const port = 8000;
 const fs = require('fs');
 
 app.use(cors({
-  origin: "https://Logeshwaran06.github.io",
+  origin: "https://logeshwaran06.github.io",
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
